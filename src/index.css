@@ -1,13 +1,73 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.currency-converter {
+  display: flex;
+  flex-flow: row wrap;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+.sidebar {
+  background-color: #0089ba;
+  width: 438px;
+  height: 100%;
+  position: fixed;
+  font-family: Consolas;
+  color: #ffffff;
+  flex: 1;
 }
+.sidebar__heading {
+  text-align: center;
+}
+.sidebar__name {
+  margin-top: 70px;
+  font-size: 30px;
+}
+.sidebar__appname {
+  margin-top: 32px;
+  font-size: 30px;
+}
+.sidebar .convertForm {
+  margin-left: 65px;
+  margin-right: 75px;
+  margin-top: 139px;
+}
+.sidebar .convertForm select, .sidebar .convertForm input, .sidebar .convertForm button {
+  width: 298px;
+}
+.sidebar .convertForm label {
+  font-size: 14px;
+}
+.sidebar .convertForm__button {
+  background-color: #00ba32;
+  border-radius: 5px;
+  color: #ffffff;
+  border: none;
+  font-size: 14px;
+  padding-top: 11px;
+  padding-bottom: 8px;
+  margin-top: 26px;
+}
+.sidebar .convertForm__button:hover {
+  opacity: 0.7;
+}
+
+.results {
+  flex: 2;
+}
+.results .main-result {
+  text-align: center;
+}
+.results .main-result-heading {
+  color: #000000;
+  font-size: 48px;
+}
+.results .main-result-amount {
+  color: #1900ba;
+  font-size: 72px;
+}
+
+/* Media Queries */
+@media screen and (max-width: 1366px) {
+  .sidebar .convertForm {
+    margin-top: 115px;
+  }
+}
+
+/*# sourceMappingURL=index.css.map */
