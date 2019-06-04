@@ -1,12 +1,15 @@
 import React from 'react'
-import WithLoading from './WithLoading';
+import moment from 'moment'
+import WithLoading from './WithLoading'
 const Results = (props) => {
     const {from, to, convertedAmount } = props;
     return (
         <div className="results">
             <div className="main-result">
-                <h3 className="main-result-heading">{from} to {to}</h3>
+                <p className="main-result-heading">{from} to {to}</p>
                 <p className="main-result-amount">{convertedAmount}</p>
+                <p className="main-result-as-of">as of</p>
+                <p className="main-result-currentDate">{moment().format('DD MMMM YYYY')}</p>
             </div>
         </div>
     )

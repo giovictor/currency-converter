@@ -3,6 +3,7 @@ import axios from 'axios';
 
 import SideBar from './components/SideBar';
 import Results from './components/Results';
+import Footer from './components/Footer';
 class App extends Component {
     constructor(props) {
         super(props);
@@ -53,6 +54,7 @@ class App extends Component {
                 <div className="currency-converter">
                     <SideBar currencies={this.state.currencies} convertCurrency={this.convertCurrency}/>
                     <Results convertedAmount={this.state.convertedAmount} from={this.state.from} to={this.state.to} isLoading={this.state.isLoading}/>
+                    {/* <Footer/> */}
                 </div>
             </div>
         );
