@@ -93,6 +93,19 @@
         }
 
     }
+
+    .otherResults {
+        display:flex;
+        flex-flow:row wrap;
+        justify-content:center;
+        text-align:left;
+        margin-left:20px;
+
+        .otherConvertedAmount {
+            flex:25%;
+            font-size:20px;
+        }
+    }
 }
 
 .footer {

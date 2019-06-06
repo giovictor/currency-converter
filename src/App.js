@@ -10,6 +10,7 @@ class App extends Component {
         this.state = {
             currencies:[],
             convertedAmount:'',
+            otherConvertedAmounts:'',
             from:'',
             to:'',
             isLoading:false
@@ -36,8 +37,12 @@ class App extends Component {
         axios.get(`https://api.exchangeratesapi.io/latest?base=${from}`)
         .then(response => {
             let convertedAmount = response.data.rates[to] * amount;
+            let otherConvertedAmounts = Object.entries(response.data.rates).map(rate => {
+                return `${rate[0]} - ${rate[1].toFixed(2) * amount}`;
+            })
             this.setState({
                 convertedAmount: convertedAmount.toFixed(2),
+                otherConvertedAmounts:otherConvertedAmounts,
                 from:from,
                 to:to,
                 isLoading:false
@@ -49,11 +54,12 @@ class App extends Component {
     }
 
     render() {
+        const { currencies, convertedAmount, from, to, otherConvertedCurrencies, otherConvertedAmounts, isLoading} = this.state;
         return (
             <div className="App">
                 <div className="currency-converter">
-                    <SideBar currencies={this.state.currencies} convertCurrency={this.convertCurrency}/>
-                    <Results convertedAmount={this.state.convertedAmount} from={this.state.from} to={this.state.to} isLoading={this.state.isLoading}/>
+                    <SideBar currencies={currencies} convertCurrency={this.convertCurrency}/>
+                    <Results convertedAmount={convertedAmount} from={from} to={to} otherConvertedAmounts={otherConvertedAmounts} isLoading={isLoading}/>
                     {/* <Footer/> */}
                 </div>
             </div>

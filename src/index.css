@@ -80,6 +80,17 @@
   font-family: Consolas;
   margin-top: 16px;
 }
+.results .otherResults {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  text-align: left;
+  margin-left: 20px;
+}
+.results .otherResults .otherConvertedAmount {
+  flex: 25%;
+  font-size: 20px;
+}
 
 .footer {
   background-color: #207fa1;
