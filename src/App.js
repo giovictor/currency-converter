@@ -38,7 +38,8 @@ class App extends Component {
         .then(response => {
             let convertedAmount = response.data.rates[to] * amount;
             let otherConvertedAmounts = Object.entries(response.data.rates).map(rate => {
-                return `${rate[0]} - ${rate[1].toFixed(2) * amount}`;
+                let otherConvertedAmount = rate[1] * amount
+                return `${rate[0]} - ${otherConvertedAmount.toFixed(2)}`;
             })
             this.setState({
                 convertedAmount: convertedAmount.toFixed(2),

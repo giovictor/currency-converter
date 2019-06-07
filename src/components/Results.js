@@ -1,6 +1,7 @@
 import React from 'react'
 import moment from 'moment'
 import WithLoading from './WithLoading'
+
 const Results = (props) => {
     const {from, to, convertedAmount, otherConvertedAmounts } = props;
 
@@ -20,6 +21,7 @@ const Results = (props) => {
             <div className="otherResults">
                 {othercurrenciesAmountLoop}
             </div>
+
         </div>
     )
 }
