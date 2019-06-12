@@ -101,6 +101,9 @@ html, body {
   font-size: 20px;
   margin-bottom: 28px;
 }
+.results .otherResults .otherConvertedAmount .amount {
+  color: #00ba32;
+}
 
 .footer {
   background-color: #207fa1;
