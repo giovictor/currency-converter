@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react'
 import moment from 'moment'
+import Loader from './Loader';
 
 const Results = (props) => {
     const {from, to, convertedAmount, otherConvertedAmounts, isLoading } = props;
@@ -10,7 +11,7 @@ const Results = (props) => {
 
     return (
         <div className="results">
-            {isLoading ? <p>Wait the results are loading...</p> :
+            {isLoading ? <Loader/> :
                 <Fragment>
                     <div className="main-result">
                         <p className="main-result-heading">{from} to {to}</p>
@@ -23,6 +24,7 @@ const Results = (props) => {
                     </div>
                 </Fragment>
             }
+
         </div> 
     )
 }

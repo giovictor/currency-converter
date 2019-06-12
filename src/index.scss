@@ -1,4 +1,8 @@
-.currency-converter {
+html, body {
+    height:100%;
+}
+
+.App {
     display:flex;
     flex-flow:row wrap;
 }
@@ -56,12 +60,15 @@
     }
 }
 
-.results {
-    flex:0 0 66.67%;
+.currency-converter {
+    flex: 0 0 67.5%;
     left:438px;
     position:relative;
+    min-height:100%;
+}
+
+.results {
     padding-bottom:72px;
-    min-height:100vh;
     
     .main-result {
         text-align:center;
@@ -104,7 +111,7 @@
         margin-left: 118px;
 
         .otherConvertedAmount {
-            flex:25%;
+            flex:1 1 200px;
             font-size:20px;
             margin-bottom: 28px;
         }
@@ -115,18 +122,31 @@
     background-color:#207fa1;
     width:100%;
     height:72px;
-    text-align: center;
+    margin-top:-72px;
     line-height: 72px;
-    position: absolute;
-    flex: 0 0 66.67%;
-    // left: 438px;
+    text-align:center;
 
     .footertext {
         color:#ffffff;
         font-size:18px;
         margin-bottom:0;
+        margin-left: 438px;
     }
 }
+
+.loader {
+    // background-color:#207fa1;
+    position:relative;
+    top:0;
+    left:0;
+    height:100vh;
+    width:100%;
+    display:flex;
+    justify-content: center;
+    align-items:center;
+}
+
+
 
 /* Media Queries */
 @media screen and (max-width:1366px) {
