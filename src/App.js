@@ -56,10 +56,10 @@ class App extends Component {
     }
 
     render() {
-        const { currencies, convertedAmount, from, to, otherConvertedCurrencies, otherConvertedAmounts, isLoading} = this.state;
+        const { currencies, convertedAmount, from, to, otherConvertedAmounts, isLoading} = this.state;
         return (
             <div className="App">
-                <SideBar currencies={currencies} convertCurrency={this.convertCurrency}/>
+                <SideBar currencies={currencies} convertCurrency={this.convertCurrency} isLoading={isLoading}/>
                 <div className="currency-converter">
                     <Results convertedAmount={convertedAmount} from={from} to={to} otherConvertedAmounts={otherConvertedAmounts} isLoading={isLoading}/>
                 </div>

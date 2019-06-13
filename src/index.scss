@@ -15,6 +15,7 @@ html, body {
     font-family:Consolas;
     color:#ffffff;
     flex:0 0 33.33%;
+    z-index:3;
 
     &__heading {
         text-align:center;
@@ -58,6 +59,13 @@ html, body {
             }
         }
     }
+
+    .messageForResults {
+        display:none;
+        text-align:center;
+        margin-top:21px;
+    }
+
 }
 
 .currency-converter {
@@ -65,6 +73,7 @@ html, body {
     left:438px;
     position:relative;
     min-height:100%;
+    z-index:1;
 }
 
 .results {
@@ -126,9 +135,11 @@ html, body {
     background-color:#207fa1;
     width:100%;
     height:72px;
-    margin-top:-72px;
     line-height: 72px;
     text-align:center;
+    position:fixed;
+    bottom:0;
+    z-index:2;
 
     .footertext {
         color:#ffffff;
@@ -139,7 +150,6 @@ html, body {
 }
 
 .loader {
-    // background-color:#207fa1;
     position:relative;
     top:0;
     left:0;
@@ -153,10 +163,94 @@ html, body {
 
 
 /* Media Queries */
+@media screen and (min-width:1920px) {
+    .results {
+        .otherResults {
+            .otherConvertedAmount {
+                flex:1 1 147px;
+            }
+        }
+    }
+}
+
 @media screen and (max-width:1366px) {
     .sidebar {
         .convertForm {
             margin-top: 115px;
         }
+    }
+}
+
+@media screen and (max-width:1199px) {
+    .App {
+        flex-flow:column wrap;
+    }
+
+    .sidebar {
+        width:100%;
+        position:relative;
+        padding-bottom: 31px;
+
+        .convertForm {
+            margin-top:31px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-flow: column;
+        }
+
+        .messageForResults {
+            display:block;
+        }
+    }
+
+    .currency-converter {
+        left:0;
+    }
+
+    .results {
+        .otherResults {
+            .otherConvertedAmount {
+                flex:1 1 240px;
+            }
+        }
+    }
+
+    .footer {
+        position:relative;
+        height:100%;
+
+        .footertext {
+            margin-left:0;
+        }
+    }
+}
+
+@media screen and (max-width:991px) {
+    .results {
+        .otherResults {
+            .otherConvertedAmount {
+                flex:1 1 180px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width:481px) {
+    .results {
+        .otherResults {
+            flex-flow: column wrap;
+            justify-content: space-around;
+            text-align: center;
+            margin-left:0;
+            .otherConvertedAmount {
+                flex:1 1 10px;
+            }
+        }
+    }
+
+    .footer {
+        line-height: 29px;
+        padding: 10px;
     }
 }

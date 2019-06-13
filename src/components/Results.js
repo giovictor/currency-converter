@@ -6,7 +6,7 @@ const Results = (props) => {
     const {from, to, convertedAmount, otherConvertedAmounts, isLoading } = props;
 
     const othercurrenciesAmountLoop = otherConvertedAmounts.map(otherConvertedAmount => {
-        return <div className="otherConvertedAmount">{otherConvertedAmount.slice(0,5)} <span className="amount">{otherConvertedAmount.slice(6)}</span></div>
+        return <div className="otherConvertedAmount" key={otherConvertedAmount}>{otherConvertedAmount.slice(0,5)} <span className="amount">{otherConvertedAmount.slice(6)}</span></div>
     });
 
     return (

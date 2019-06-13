@@ -20,7 +20,7 @@ class SideBar extends Component {
     }
 
     render() {
-        const { currencies } = this.props;
+        const { currencies, isLoading } = this.props;
 
 
         return (
@@ -47,9 +47,10 @@ class SideBar extends Component {
                         <label>Amount</label>
                         <input type="number" name="amount" className="form-control" value={this.state.amount} onChange={this.handleChange}/>
                     </div>
-
-                    <button type="submit" className="convertForm__button">CONVERT</button>
+                    {/* { Fix conditional rendering of buttons} */}
+                    <button type="submit" className="convertForm__button">{isLoading ? 'CONVERTING...' : 'CONVERT'}</button>
                 </form>
+                <p className="messageForResults">See Results Below</p>
             </aside>
         )
     }
