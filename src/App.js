@@ -35,6 +35,7 @@ class App extends Component {
     }
 
     convertCurrency = (from, to, amount) => {
+        this.setState({isLoading:true});
         axios.get(`https://api.exchangeratesapi.io/latest?base=${from}`)
         .then(response => {
             let convertedAmount = response.data.rates[to] * amount;
@@ -42,13 +43,15 @@ class App extends Component {
                 let otherConvertedAmount = rate[1] * amount
                 return `${rate[0]} - ${otherConvertedAmount.toFixed(2)}`;
             })
-            this.setState({
-                convertedAmount: convertedAmount.toFixed(2),
-                otherConvertedAmounts:otherConvertedAmounts,
-                from:from,
-                to:to,
-                isLoading:false
-            })
+            setTimeout(() => {
+                this.setState({
+                    convertedAmount: convertedAmount.toFixed(2),
+                    otherConvertedAmounts:otherConvertedAmounts,
+                    from:from,
+                    to:to,
+                    isLoading:false
+                })
+            }, 500)  
         })
         .catch(error => {
             console.log(error);

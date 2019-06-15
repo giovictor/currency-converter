@@ -6,7 +6,7 @@ class SideBar extends Component {
         this.state = {
             from:'USD',
             to:'PHP',
-            amount:1.00,
+            amount:1.00
         }
     }
 
